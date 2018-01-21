@@ -9,6 +9,7 @@ import { init as authinit, reloadUserinfo } from "./auth";
 import "./fetchWithAuth";
 
 import Hello from "./Hello";
+import Team from "./Team";
 
 const browserHistory = createBrowserHistory();
 window.browserHistory = browserHistory;
@@ -22,6 +23,7 @@ const routes = (
   <Router asyncBefore={routeChange} history={browserHistory}>
     <Route path={process.env.PUBLIC_URL} component={App}>
       <IndexRoute component={Hello} />
+      <Route path="/:contestSlug" component={Team} />
     </Route>
   </Router>
 );
